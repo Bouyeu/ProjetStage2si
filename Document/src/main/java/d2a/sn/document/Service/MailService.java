@@ -15,7 +15,7 @@ import java.util.Map;
 public class MailService {
     private final String API_URL = "https://api.brevo.com/v3/smtp/email";
     // Injecting the API key from application properties or environment variables
-    @Value("${brevo.api.key}")
+
     private String  API_KEY;
     // Remplacez par votre clé API
 
