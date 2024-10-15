@@ -10,7 +10,15 @@
         <option value="$PROJECT_DIR$/Document/pom.xml" />
         <option value="$PROJECT_DIR$/GateWay/pom.xml" />
         <option value="$PROJECT_DIR$/Prerequis/pom.xml" />
+        <option value="$PROJECT_DIR$/renouvellement/pom.xml" />
+        <option value="$PROJECT_DIR$/Renouvellement/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Renouvellement/pom.xml" />
+        <option value="$PROJECT_DIR$/renouvellement/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">

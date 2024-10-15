@@ -14,10 +14,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class UserController {
+public class UserCotroller {
     private UserRepository userRepository;
     private UserService  userService;
-    public UserCotroller(UserRepository userRepository, UserService userService) {
+    public UserController(UserRepository userRepository, UserService userService) {
         this.userRepository = userRepository;
 
         this.userService = userService;

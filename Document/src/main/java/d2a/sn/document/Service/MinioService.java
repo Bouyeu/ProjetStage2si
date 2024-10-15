@@ -12,23 +12,24 @@ import java.io.InputStream;
 public class MinioService {
     private final MinioClient minioClient;
     @Value("${minio.bucket.name}")
-    private String bucketName;
+    private String minioUrl;
     public MinioService(MinioClient minioClient){
         this.minioClient=minioClient;
 
     }
-    public String uploadFile(MultipartFile file) throws Exception {
-        String fileName =file.getOriginalFilename();
-        try (InputStream inputStream = file.getInputStream()) {
-            minioClient.putObject(
-                    PutObjectArgs.builder()
-                            .bucket(bucketName)
+    public String uploadFile(String fileName, InputStream stream, String contentType) throws Exception {
+        minioClient.putObject(PutObjectArgs.builder()
+                            .bucket("projetstage2024")
                             .object(fileName)
-                            .stream(inputStream, file.getSize(), -1)
-                            .contentType(file.getContentType())
+                            .stream(stream, stream.available(), -1)
+                            .contentType(contentType)
                             .build()
             );
-        }
-        return fileName;
+        String fileUrl = String.format("%s/%s/%/s",
+                minioUrl,
+                "projetstage2024",
+                fileName);
+
+        return fileUrl;
     }
 }

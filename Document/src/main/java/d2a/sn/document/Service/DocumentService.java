@@ -114,6 +114,9 @@ public List<Prerequis> getPrerequiByDocumentId(Long documentId) throws Ressource
         Document document=documentRepository.findById(documentId).orElseThrow(()->new RessourceNotFound("Document not found"));
         return document.getPrerequis();
 }
+    public List<Document> getExpiringDocuments() {
+        return documentRepository.findByDateExpirationBefore(LocalDate.now().plusDays(15));
+    }
 }
 
 

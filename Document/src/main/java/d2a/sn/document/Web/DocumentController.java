@@ -45,7 +45,7 @@ public class DocumentController {
         String fileName = file.getOriginalFilename();
         String fileUrl;
         try {
-            fileUrl = minioService.uploadFile(fileName, file.getInputStream(), file.getContentType());
+            fileUrl = minioService.uploadFile(fileName,file.getInputStream(), file.getContentType());
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null); // Gérer l'erreur
@@ -119,5 +119,6 @@ public class DocumentController {
         List<Prerequis> prerequis =documentService.getPrerequiByDocumentId(documentId);
         return ResponseEntity.ok(prerequis);
     }
+
     }
 
